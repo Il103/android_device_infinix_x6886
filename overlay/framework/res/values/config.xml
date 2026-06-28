@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="config_defaultScreenBrightness">128</integer>
-    <integer name="config_screenBrightnessSettingMaximum">255</integer>
-    <integer name="config_screenBrightnessSettingMinimum">10</integer>
-    <integer name="config_defaultPeakRefreshRate">144000</integer>
-    <integer name="config_defaultMinRefreshRate">60000</integer>
-    <integer name="config_longPressTimeout">400</integer>
-    <integer name="config_maxNotificationChannelsPerApp">25</integer>
-    <integer name="config_maximumCameraUsers">1</integer>
+    <bool name="config_showNavigationBar">false</bool>
+    <integer-array name="config_tether_upstream_types">
+        <item>1</item>
+    </integer-array>
 </resources>

@@ -1,34 +1,15 @@
-# System Properties for Infinix Hot 60 Pro Plus (X6886)
+# System properties from stock ROM dump
+# Source: system/system/build.prop
 
-# Radio
-ro.telephony.default_network=9,9
-persist.vendor.radio.data.con_rpt=1
-persist.vendor.radio.apm_sim_not_pwdn=1
-
-# Audio
-ro.vendor.audio.fluence.mode=endfire
-persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.speaker=true
-
-# Camera
-persist.vendor.camera.cap.finish=2
-persist.vendor.camera.preview.stable=true
-persist.vendor.camera.ois.eis.enable=true
-
-# Graphics
-ro.vendor.gpu.default_vulkan=1
-
-# Battery
-persist.vendor.battery.capacity=5160
-
-# Fingerprint
-ro.hardware.fp.fod=true
-
-# Thermal
-persist.vendor.thermal.enable=1
-
-# MTK
-ro.vendor.mtk_md_log_enable=0
-ro.vendor.mtk_ims_support=1
-ro.vendor.mtk_wfd_support=1
-ro.vendor.mtk_wlan_support=1
+ro.build.description=sys_tssi_64_armv82_infinix-user 15 AP3A.240905.015.A2 985899 dev-keys
+ro.build.display.id=AP3A.240905.015.A2 dev-keys
+ro.build.version.sdk=35
+ro.build.version.release=15
+ro.build.version.security_patch=2026-04-01
+ro.product.system.brand=Infinix
+ro.product.system.device=FULL-64-ARMV82
+ro.product.system.manufacturer=INFINIX
+ro.product.system.name=TSSI
+ro.product.system.model=
+ro.build.id=AP3A.240905.015.A2
+ro.product.locale=en-US
