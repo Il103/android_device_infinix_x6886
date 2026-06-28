@@ -1,0 +1,34 @@
+allow hal_fingerprint_default init:unix_stream_socket connectto;
+allow hal_fingerprint_default input_device:dir { read open search };
+allow hal_fingerprint_default input_device:chr_file rw_file_perms;
+allow hal_fingerprint_default mnt_vendor_file:dir search;
+allow hal_fingerprint_default persist_data_file:dir create_dir_perms;
+allow hal_fingerprint_default persist_data_file:file create_file_perms;
+allow hal_fingerprint_default property_socket:sock_file write;
+allow hal_fingerprint_default self:netlink_kobject_uevent_socket { read create bind setopt };
+allow hal_fingerprint_default sysfs_lcm_name_file:file { read write open getattr };
+allow hal_fingerprint_default sysfs_fp_name_path:dir r_dir_perms;
+allow hal_fingerprint_default sysfs_fp_name_path:file rw_file_perms;
+allow hal_fingerprint_default vndbinder_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_fingerprint_default vendor_gf_data_file:dir create_dir_perms;
+allow hal_fingerprint_default vendor_gf_data_file:file create_file_perms;
+allow hal_fingerprint_default vendor_proc_fingerprint:dir { ioctl read getattr lock open watch watch_reads search };
+allow hal_fingerprint_default vendor_proc_fingerprint:file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_fingerprint_default vendor_proc_fingerprint:lnk_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_fingerprint_default silead_fpd_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_fingerprint_default silead_fpd_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+allow hal_fingerprint_default silead_fpd_data_file:dir { ioctl read write create getattr lock open watch watch_reads add_name remove_name search };
+allow hal_fingerprint_default jiiov_fp_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_fingerprint_default jiiov_vendor_data_file:dir { ioctl read write create getattr setattr lock rename open watch watch_reads add_name remove_name reparent search rmdir };
+allow hal_fingerprint_default jiiov_vendor_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
+
+allow hal_fingerprint_default goodix_fingerprint_service:hwservice_manager { add find };
+binder_call(hal_fingerprint_default, hal_fingerprint_default)
+
+vndbinder_use(hal_fingerprint_default)
+hwbinder_use(hal_fingerprint_default)
+hal_client_domain(hal_fingerprint_default, hal_power)
+hal_client_domain(hal_fingerprint_default, hal_health)
+
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
+set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
