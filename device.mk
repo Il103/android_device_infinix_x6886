@@ -2,6 +2,9 @@
 
 LOCAL_PATH := device/infinix/x6886
 
+# Inherit from vendor tree
+$(call inherit-product, vendor/infinix/X6886/vendor.mk)
+
 # Device identifier
 PRODUCT_DEVICE := x6886
 PRODUCT_NAME := x6886
