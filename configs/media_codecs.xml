@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MediaCodecs>
+    <Encoders>
+        <MediaCodec name="c2.mtk.avc.encoder" type="video/avc">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-60" />
+            <Limit name="bitrate" range="64000-60000000" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.hevc.encoder" type="video/hevc">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-60" />
+            <Limit name="bitrate" range="64000-60000000" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.aac.encoder" type="audio/mp4a-latm">
+            <Limit name="channel-count" range="1-8" />
+            <Limit name="bitrate" range="8000-320000" />
+        </MediaCodec>
+    </Encoders>
+    <Decoders>
+        <MediaCodec name="c2.mtk.avc.decoder" type="video/avc">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-120" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.hevc.decoder" type="video/hevc">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-120" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.vp9.decoder" type="video/x-vnd.on2.vp9">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-120" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.av1.decoder" type="video/av01">
+            <Limit name="size" range="320x240-3840x2160" />
+            <Limit name="framerate" range="30-60" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.aac.decoder" type="audio/mp4a-latm">
+            <Limit name="channel-count" range="1-8" />
+        </MediaCodec>
+        <MediaCodec name="c2.mtk.mp3.decoder" type="audio/mpeg">
+            <Limit name="channel-count" range="1-2" />
+        </MediaCodec>
+    </Decoders>
+</MediaCodecs>

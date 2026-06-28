@@ -1,0 +1,2 @@
+add_lunch_combo lineage_x6886-userdebug
+add_lunch_combo lineage_x6886-eng

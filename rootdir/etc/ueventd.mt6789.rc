@@ -1,0 +1,48 @@
+# ueventd.mt6789.rc
+
+/dev/pmt              0660  system     system
+/dev/stune             0660  system     system
+/dev/fgl_gpu           0660  system     system
+/dev/mali0             0660  system     system
+/dev/mali              0660  system     system
+/dev/gpu               0660  system     system
+
+# WiFi
+/dev/wmtDevs           0660  wifi       wifi
+/dev/stpbt             0660  wifi       wifi
+/dev/stpwmt            0660  wifi       wifi
+/dev/wmtTty            0660  wifi       wifi
+
+# GPS
+/dev/gps               0660  system     system
+/dev/gps_channel       0660  system     system
+
+# Camera
+/dev/camera            0660  system     system
+/dev/imgsensor0        0660  system     system
+/dev/imgsensor1        0660  system     system
+/dev/imgsensor2        0660  system     system
+
+# Sensors
+/dev/accelerometer     0660  system     system
+/dev/gyroscope         0660  system     system
+/dev/magnetometer      0660  system     system
+/dev/proximity         0660  system     system
+
+# Touch Panel
+/dev/fts               0660  system     system
+/dev/goodix_fp         0660  system     system
+
+# Power
+/dev/mtk_pmic          0660  system     system
+/dev/battery           0660  system     system
+/dev/charger           0660  system     system
+
+# I2C
+/dev/i2c-0             0660  system     system
+/dev/i2c-1             0660  system     system
+/dev/i2c-2             0660  system     system
+/dev/i2c-3             0660  system     system
+
+# SPI
+/dev/spidev0.0         0660  system     system

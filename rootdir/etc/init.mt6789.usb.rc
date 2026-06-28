@@ -1,0 +1,10 @@
+# init.mt6789.usb.rc
+
+on property:sys.usb.config=adb && property:sys.usb.force=1
+    write /sys/devices/platform/11200000.usb/force_usb_speed super-speed
+
+on property:sys.usb.config=accessory
+    write /sys/devices/platform/11200000.usb/role host
+
+on property:sys.usb.config=none
+    write /sys/devices/platform/11200000.usb/role device

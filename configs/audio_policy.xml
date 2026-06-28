@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<audioPolicyConfiguration version="2.0">
+    <globalConfiguration speakerDrcEnabled="true"/>
+    <modules>
+        <module name="primary" halVersion="2.0">
+            <mixPorts>
+                <mixPort name="primary output" role="source" flags="AUDIO_OUTPUT_FLAG_PRIMARY">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT" samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="deep_buffer" role="source" flags="AUDIO_OUTPUT_FLAG_DEEP_BUFFER">
+                    <profile name="" format="AUDIO_FORMAT_PCM_24_BIT_PACKED" samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="low_latency" role="source" flags="AUDIO_OUTPUT_FLAG_LOW_LATENCY">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT" samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </mixPort>
+                <mixPort name="primary input" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT" samplingRates="16000,48000" channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
+                </mixPort>
+            </mixPorts>
+            <devicePorts>
+                <devicePort tagName="Earpiece" type="AUDIO_DEVICE_OUT_EARPIECE" role="sink"/>
+                <devicePort tagName="Speaker" type="AUDIO_DEVICE_OUT_SPEAKER" role="sink"/>
+                <devicePort tagName="Wired Headset" type="AUDIO_DEVICE_OUT_WIRED_HEADSET" role="sink"/>
+                <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink"/>
+                <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source"/>
+            </devicePorts>
+            <routes>
+                <route type="mix" sink="Earpiece" sources="primary output,deep_buffer"/>
+                <route type="mix" sink="Speaker" sources="primary output,deep_buffer,low_latency"/>
+                <route type="mix" sink="primary input" sources="Built-In Mic"/>
+            </routes>
+        </module>
+    </modules>
+</audioPolicyConfiguration>

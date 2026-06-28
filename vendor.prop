@@ -1,0 +1,20 @@
+# Vendor Properties for Infinix Hot 60 Pro Plus (X6886)
+
+# Audio
+vendor.audio.feature.fluence.enable=true
+vendor.audio.feature.voice.con_rec=true
+vendor.audio.feature.incall_music=true
+
+# Camera
+vendor.camera.feature.cshot.support=true
+vendor.camera.feature.film.grain.support=true
+
+# Display
+ro.vendor.display.gpu.filter=1
+ro.vendor.display.default_fps=120
+
+# Fingerprint
+ro.vendor.fingerprint.goodix.version=GF9578
+
+# Power
+ro.vendor.battery.enable=1

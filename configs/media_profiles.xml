@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<media_profiles>
+    <VideoProfile>
+        <Profile name="video-720p">
+            <Format>video/mp4v-es</Format>
+            <Width>1280</Width>
+            <Height>720</Height>
+            <FrameRate>30</FrameRate>
+            <BitRate>4000000</BitRate>
+        </Profile>
+        <Profile name="video-1080p">
+            <Format>video/mp4v-es</Format>
+            <Width>1920</Width>
+            <Height>1080</Height>
+            <FrameRate>30</FrameRate>
+            <BitRate>8000000</BitRate>
+        </Profile>
+        <Profile name="video-4k">
+            <Format>video/mp4v-es</Format>
+            <Width>3840</Width>
+            <Height>2160</Height>
+            <FrameRate>30</FrameRate>
+            <BitRate>20000000</BitRate>
+        </Profile>
+    </VideoProfile>
+    <ImageProfile>
+        <Profile name="photo-hires">
+            <Format>image/jpeg</Format>
+            <Width>8190</Width>
+            <Height>6120</Height>
+            <Quality>95</Quality>
+        </Profile>
+        <Profile name="photo-standard">
+            <Format>image/jpeg</Format>
+            <Width>4000</Width>
+            <Height>3000</Height>
+            <Quality>85</Quality>
+        </Profile>
+    </ImageProfile>
+</media_profiles>
