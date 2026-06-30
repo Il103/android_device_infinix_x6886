@@ -1,3 +1,16 @@
+    factory_init.connectivity.rc
+    meta_init.project.rc
+    factory_init.connectivity.common.rc
+    meta_init.modem.rc
+    multi_init.rc
+    factory_init.project.rc
+    init.cgroup.rc
+    meta_init.connectivity.common.rc
+    factory_init.rc
+    meta_init.vendor.rc
+    meta_init.rc
+    init.aee.rc
+    meta_init.connectivity.rc
 #
 # Copyright (C) 2024 The LineageOS Project
 #

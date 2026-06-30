@@ -5,13 +5,6 @@
 //
 
 prebuilt_etc {
-    name: "init_connectivity.rc",
-    src: "etc/init/hw/init_connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
-
-prebuilt_etc {
     name: "fstab.mt6789",
     src: "etc/fstab.mt6789",
     vendor: true,
@@ -19,8 +12,43 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.mt6789.power.rc",
-    src: "etc/init/hw/init.mt6789.power.rc",
+    name: "factory_init.connectivity.common.rc",
+    src: "etc/init/hw/factory_init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "factory_init.connectivity.rc",
+    src: "etc/init/hw/factory_init.connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "factory_init.project.rc",
+    src: "etc/init/hw/factory_init.project.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "factory_init.rc",
+    src: "etc/init/hw/factory_init.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "init.aee.rc",
+    src: "etc/init/hw/init.aee.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "init.cgroup.rc",
+    src: "etc/init/hw/init.cgroup.rc",
     sub_dir: "init/hw",
     vendor: true
 }
@@ -40,14 +68,15 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.insmod.mt6789.cfg",
-    src: "etc/init.insmod.mt6789.cfg",
+    name: "init.modem.rc",
+    src: "etc/init/hw/init.modem.rc",
+    sub_dir: "init/hw",
     vendor: true
 }
 
 prebuilt_etc {
-    name: "init.modem.rc",
-    src: "etc/init/hw/init.modem.rc",
+    name: "init.mt6789.power.rc",
+    src: "etc/init/hw/init.mt6789.power.rc",
     sub_dir: "init/hw",
     vendor: true
 }
@@ -88,6 +117,69 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.sensor_2_0.rc",
+    src: "etc/init/hw/init.sensor_2_0.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "init_connectivity.rc",
+    src: "etc/init/hw/init_connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.connectivity.common.rc",
+    src: "etc/init/hw/meta_init.connectivity.common.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.connectivity.rc",
+    src: "etc/init/hw/meta_init.connectivity.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.modem.rc",
+    src: "etc/init/hw/meta_init.modem.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.project.rc",
+    src: "etc/init/hw/meta_init.project.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.rc",
+    src: "etc/init/hw/meta_init.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "meta_init.vendor.rc",
+    src: "etc/init/hw/meta_init.vendor.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
+    name: "multi_init.rc",
+    src: "etc/init/hw/multi_init.rc",
+    sub_dir: "init/hw",
+    vendor: true
+}
+
+prebuilt_etc {
     name: "init.recovery.usb.rc",
     src: "etc/init.recovery.usb.rc",
     recovery: true,
@@ -95,9 +187,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.sensor_2_0.rc",
-    src: "etc/init/hw/init.sensor_2_0.rc",
-    sub_dir: "init/hw",
+    name: "ueventd.mt6789.rc",
+    src: "etc/ueventd.mt6789.rc",
     vendor: true
 }
 
@@ -111,5 +202,41 @@ prebuilt_etc {
 sh_binary {
     name: "init.insmod.sh",
     src: "bin/init.insmod.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.mf_nowb.sh",
+    src: "bin/init.mf_nowb.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.spd_cpu_set.sh",
+    src: "bin/init.spd_cpu_set.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.taskset.sh",
+    src: "bin/init.taskset.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.tasksetEnd.sh",
+    src: "bin/init.tasksetEnd.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.tasksetStart.sh",
+    src: "bin/init.tasksetStart.sh",
+    vendor: true
+}
+
+sh_binary {
+    name: "init.tran_mcf.sh",
+    src: "bin/init.tran_mcf.sh",
     vendor: true
 }
