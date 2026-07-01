@@ -172,4 +172,4 @@ TARGET_SCREEN_DENSITY := 392
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Inherit vendor BoardConfig
-include vendor/infinix/X6886/BoardConfigVendor.mk
+include vendor/infinix/x6886/BoardConfigVendor.mk

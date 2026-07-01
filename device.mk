@@ -515,4 +515,4 @@ PRODUCT_PACKAGES += \
     hostapd
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/infinix/X6886/X6886-vendor.mk)
+$(call inherit-product, vendor/infinix/x6886/x6886-vendor.mk)
