@@ -6,7 +6,7 @@
 
 prebuilt_etc {
     name: "fstab.mt6789",
-    src: "etc/fstab.mt6789",
+    src: "fstab.mt6789",
     vendor: true,
     vendor_ramdisk_available: true
 }
@@ -88,12 +88,6 @@ prebuilt_etc {
     vendor: true
 }
 
-prebuilt_etc {
-    name: "init.mt6789.usb.rc",
-    src: "etc/init/hw/init.mt6789.usb.rc",
-    sub_dir: "init/hw",
-    vendor: true
-}
 
 prebuilt_etc {
     name: "init.mtkgki.rc",

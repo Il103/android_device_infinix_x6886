@@ -7,6 +7,11 @@
 soong_namespace {
 }
 
+soong_config_module_type_import {
+    from: "frameworks/opt/net/wifi/libwifi_hal/Android.bp",
+    module_types: ["wifi_cc_defaults"],
+}
+
 cc_prebuilt_library_shared {
     name: "libbinder-v31",
     vendor: true,
@@ -59,4 +64,9 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     check_elf_files: false,
+}
+
+wifi_cc_defaults {
+    name: "libwifi-hal-mediatek",
+    shared_libs: ["libwifi-hal-wrapper"],
 }
