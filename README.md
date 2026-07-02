@@ -8,78 +8,56 @@
 | RAM | 8 GB |
 | Storage | 128/256 GB |
 | Display | 6.78" IPS LCD, 1080x2460 |
-| Android | 15 (SDK 35) |
+| Android | 15 (LineageOS 23.2) |
+| Kernel | Linux 5.10.237 |
 | Branch | lineage-23.2 |
-
-## Build
-
-```bash
-source build/envsetup.sh
-lunch lineage_x6886-userdebug
-mka bacon
-```
 
 ## Device tree structure
 
 ```
 device/infinix/x6886/
-├── Android.mk
-├── AndroidProducts.mk
-├── BoardConfig.mk
-├── device.mk                    # Main device makefile
-├── lineage_x6886.mk            # LineageOS entry point
-├── extract-files.py            # Blob extraction from device
-├── setup-makefiles.py          # Makefile generator
-├── proprietary-files.txt       # Full blob manifest (5273 entries)
-├── system.prop                 # System properties from stock
-├── system_ext.prop             # system_ext properties from stock
-├── vendor.prop                 # Vendor properties from stock
-├── product.prop                # Product properties from stock
-├── odm.prop                    # ODM properties from stock
-├── odm_dlkm.prop               # odm_dlkm properties from stock
-├── vendor_dlkm.prop            # vendor_dlkm properties from stock
-├── vendor_logtag.mk
-├── configs/                    # Audio/media/wifi/vintf configs
-├── overlay/                    # RRO overlays
-├── overlay-lineage/            # Lineage-specific overlays
-├── rootdir/                    # Init files, fstab, ueventd
-│   ├── Android.bp              # Soong module definitions
-│   ├── fstab.mt6789
-│   ├── etc/
-│   │   ├── init.mt6789.rc
-│   │   ├── init.mt6789.usb.rc
-│   │   ├── init.x6886.rc
-│   │   └── ueventd.mt6789.rc
-│   └── etc/init/hw/
-│       ├── factory_init.rc
-│       ├── factory_init.connectivity.rc
-│       ├── factory_init.project.rc
-│       ├── meta_init.rc
-│       ├── meta_init.connectivity.rc
-│       ├── meta_init.project.rc
-│       ├── init.aee.rc
-│       ├── init.cgroup.rc
-│       ├── init.conninfra.rc
-│       ├── init.mt6789.rc
-│       ├── init.mt6789.power.rc
-│       ├── init.mt6789.sensor_hal.rc
-│       ├── init.mt6789.usb.rc
-│       ├── init.mt6789_charging.rc
-│       ├── init.project.rc
-│       ├── init.sensor_hal.rc
-│       ├── init_connectivity.rc
-│       ├── multi_init.rc
-│       ├── init.insmod.rc
-│       ├── init.modem.rc
-│       ├── init.c2k.rc
-│       ├── init.ram_console.rc
-│       ├── init.trustonic.rc
-│       └── init.mobile_log_d.rc
-├── sepolicy/                   # SELinux policies from stock
-└── vndk/                       # VNDK configs
+├── Android.mk / Android.bp
+├── AndroidProducts.mk           # Points to lineage_x6886.mk
+├── BoardConfig.mk               # Board config (MT6789, AVB, SEPolicy, etc.)
+├── device.mk                    # Main device makefile (all sections)
+├── lineage_x6886.mk             # LineageOS product entry point
+├── extract-files.py / setup-makefiles.py
+├── proprietary-files.txt        # Full blob manifest (7074 entries)
+├── *.prop                       # System/vendor/product/odm properties
+├── configs/                     # Audio, media, power, sensors, thermal, vintf
+├── overlay/                     # RRO overlays (Settings, SystemUI, Wifi, etc.)
+├── overlay-lineage/             # Lineage-specific overlays
+├── prebuilt/                    # dtb.img, dtbo.img, ramdisk.cpio
+├── rootdir/                     # Init RC files, fstab, ueventd, insmod
+├── sepolicy/                    # SELinux policies (private/public/vendor)
+└── vndk/                        # VNDK libs (binder, hidlbase, utils)
 ```
+
+## Build
+
+```bash
+# Setup
+source build/envsetup.sh
+lunch lineage_x6886-userdebug
+
+# Build
+mka bacon -j$(nproc)
+```
+
+## Requirements
+
+| Dependency | Repo | Source |
+|------------|------|--------|
+| kernel/infinix/x6886 | kernel_infinix_x6886 | lineage-23.2 |
+| vendor/infinix/x6886 | vendor_infinix_x6886 | lineage-23.2 (Git LFS) |
+| hardware/mediatek | LineageOS/android_hardware_mediatek | lineage-23.2 |
+| device/mediatek/sepolicy_vndr | LineageOS/android_device_mediatek_sepolicy_vndr | lineage-23.2 |
+| hardware/transsion | mt6789-transsion/hardware_transsion | lineage-23.2 |
+| vendor/mediatek/ims | xiaomi-mediatek-devs/android_vendor_mediatek_ims | android-16 |
+
+See [android_manifest_x6886](https://github.com/Il103/android_manifest_x6886) for the full local manifest.
 
 ## Credits
 
-- [Il103](https://github.com/Il103) - Original device tree and stock ROM dump
+- Stock ROM dump by [Il103](https://github.com/Il103)
 - LineageOS team
