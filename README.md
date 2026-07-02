@@ -8,7 +8,7 @@
 | RAM | 8 GB |
 | Storage | 128/256 GB |
 | Display | 6.78" IPS LCD, 1080x2460 |
-| Android | 15 (LineageOS 23.2) |
+| Android | 15 ( XOS 15 ) |
 | Kernel | Linux 5.10.237 |
 | Branch | lineage-23.2 |
 
