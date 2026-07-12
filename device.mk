@@ -109,8 +109,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth-service.mediatek
 
 PRODUCT_PACKAGES += \
-    vendor.mediatek.hardware.bluetooth.audio@2.1.vendor:64 \
-    vendor.mediatek.hardware.bluetooth.audio@2.2.vendor:64
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -195,7 +193,6 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.example \
-    android.hardware.health-service.example-recovery \
     charger_res_images_vendor
 
 # HIDL
@@ -218,7 +215,6 @@ PRODUCT_PACKAGES += \
     init.connectivity.common.rc \
     init.connectivity.rc \
     init.insmod.sh \
-    init.insmod.mt6789.cfg \
     init.modem.rc \
     init.mt6789.power.rc \
     init.mt6789.rc \
@@ -272,7 +268,6 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 # Media
 $(call soong_config_set_bool,android_hardware_mediatek_codec2,link_v33_libstagefright_foundation,true)
 PRODUCT_PACKAGES += \
-    android.hardware.media.c2-mtk-service \
     libcodec2_vndk.vendor:64 \
     libeffects:64 \
     libeffectsconfig.vendor:64 \
@@ -475,7 +470,6 @@ PRODUCT_PACKAGES += \
     libtinyxml2-v34 \
     libutils-v32 \
     libhidlbase-v32 \
-    libbinder-v32
 
 PRODUCT_PACKAGES += \
     libutils-v31 \

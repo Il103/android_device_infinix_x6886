@@ -30,7 +30,7 @@ TARGET_NO_BOOTLOADER := true
 BOARD_HAS_MTK_HARDWARE := true
 
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
-TARGET_PREBUILT_DTB := $(LOCAL_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_BOOT_HEADER_VERSION := 4
@@ -43,7 +43,7 @@ BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 
 # DTB/DTBO
-BOARD_PREBUILT_DTBOIMAGE := $(LOCAL_PATH)/prebuilt/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
 
 # Recovery
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
@@ -169,7 +169,10 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_SCREEN_DENSITY := 392
 
 # Workaround for Lineage soong generator
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Inherit vendor BoardConfig
 include vendor/infinix/x6886/BoardConfigVendor.mk
+
+# Kernel - prebuilt GKI
+TARGET_KERNEL_SOURCE :=
+BOARD_PREBUILT_DTBIMAGE_DIR := device/infinix/x6886/prebuilt/dtb
