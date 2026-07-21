@@ -1,0 +1,11 @@
+# Additional vendor property types for X6886
+vendor_restricted_prop(vendor_mtk_omx_core_prop)
+typeattribute vendor_mtk_omx_core_prop mtk_core_property_type;
+
+vendor_restricted_prop(vendor_audioserver_prop)
+typeattribute vendor_audioserver_prop mtk_core_property_type;
+
+vendor_restricted_prop(vendor_dynamic_sensor_prop)
+typeattribute vendor_dynamic_sensor_prop mtk_core_property_type;
+type vendor_hwc_prop, property_type, vendor_property_type;
+type vendor_silead_fp_prop, property_type, vendor_property_type;

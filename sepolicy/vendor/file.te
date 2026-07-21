@@ -1,0 +1,53 @@
+# Camera
+type sysfs_tran_cam_file, fs_type, sysfs_type;
+type tran_imgsensor_info_file, fs_type, sysfs_type;
+type transsion_camera_data_file, file_type, data_file_type, mlstrustedobject;
+type transsion_camera_data_meghumaneffect_file, file_type, data_file_type;
+type transsion_camera_meghdr_file, file_type, data_file_type;
+type vendor_arcsoft_data_file, file_type, data_file_type;
+type vendor_portrait_data_file, file_type, data_file_type, mlstrustedobject;
+type vendor_watermark_data_file, file_type, data_file_type, mlstrustedobject;
+type vendor_megvii_data_file, file_type, data_file_type, mlstrustedobject;
+
+# Data
+type storage_dbg_data_file, file_type, core_data_file_type, data_file_type;
+
+# Display
+type sysfs_lcm_name_file, fs_type, sysfs_type;
+
+# Fingerprint
+type jiiov_vendor_data_file, file_type, data_file_type;
+type silead_fpd_data_file, data_file_type, file_type;
+type sysfs_fp_name_path, fs_type, sysfs_type;
+type vendor_gf_data_file, file_type, data_file_type;
+type vendor_proc_fingerprint, fs_type, proc_type, sysfs_type;
+
+# MMC
+type vendor_sysfs_mmc_device_type, fs_type, sysfs_type;
+
+# NFC
+type nfc_vendor_data_file, file_type, data_file_type;
+
+# Gesture
+type proc_gesture_function, fs_type, proc_type, sysfs_type;
+type proc_gesture_state, fs_type, proc_type, sysfs_type;
+
+# OTG
+type sysfs_OTG_STATE_file, fs_type, sysfs_type;
+type sysfs_OTG_CTL_file, fs_type, sysfs_type;
+
+# Power
+type sysfs_aichg_file, fs_type, sysfs_type;
+
+# Torch
+type sysfs_sub_torch_file, fs_type, sysfs_type;
+type sysfs_tele_torch_file, fs_type, sysfs_type;
+type sysfs_torch_file, fs_type, sysfs_type;
+type sysfs_wide_torch_file, fs_type, sysfs_type;
+
+# Touch
+type proc_main_game_state, fs_type, proc_type, sysfs_type;
+type proc_game_state, fs_type, proc_type, sysfs_type;
+
+# VMAX
+type aw87xxx_vmax, fs_type, sysfs_type;

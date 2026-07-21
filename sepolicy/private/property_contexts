@@ -1,0 +1,28 @@
+# Audio
+ro.vendor.qti.va_aosp.support               u:object_r:vendor_exported_system_prop:s0 exact bool
+
+# Camera
+cam.egnsavefile.enable                      u:object_r:exported_default_prop:s0
+debuglog.drv                                u:object_r:exported_default_prop:s0
+debuglog.drv.                               u:object_r:exported_default_prop:s0
+st_repair.debug.                            u:object_r:exported_default_prop:s0
+
+# Debug
+persist.dbg.keep_debugfs_mounted            u:object_r:exported_default_prop:s0 exact bool
+
+# Fingerprint
+gf.debug.                                   u:object_r:vendor_fingerprint_prop:s0
+
+# Hardware
+ro.chipname                                 u:object_r:exported_default_prop:s0 exact string
+ro.hardware.chipname                        u:object_r:exported_default_prop:s0 exact string
+ro.mediatek.platform                        u:object_r:exported_default_prop:s0 exact string
+
+# Mnld
+ro.logsystem.usertype                       u:object_r:build_prop:s0
+
+# SVN
+ro.product.svn                              u:object_r:build_prop:s0
+
+# Vendor aware available
+ro.vendor.aware_available                   u:object_r:vendor_aware_available_prop:s0
