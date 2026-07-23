@@ -1,11 +1,10 @@
 #
 # Copyright (C) 2024-2025 The LineageOS Project
-#
 # SPDX-License-Identifier: Apache-2.0
 #
 
 DEVICE_PATH := device/infinix/x6886
-KERNEL_PATH := kernel/infinix/x6886
+KERNEL_PATH := kernel/common
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 TARGET_ARCH := arm64
@@ -29,17 +28,14 @@ TARGET_BOARD_PLATFORM := mt6789
 TARGET_NO_BOOTLOADER := true
 BOARD_HAS_MTK_HARDWARE := true
 
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
-TARGET_KERNEL_SOURCE :=
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+TARGET_KERNEL_SOURCE := $(KERNEL_PATH)
+TARGET_KERNEL_CONFIG := gki_defconfig
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_USES_VULKAN := true
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_RAMDISK_OFFSET := 0x11b00000
 BOARD_TAGS_OFFSET := 0x07c80000
@@ -48,16 +44,13 @@ BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-# DTB/DTBO
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-
 # Recovery
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt6789
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Kernel modules - ramdisk (from kernel tree)
+# Kernel modules - ramdisk
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/ramdisk/modules.load))
 BOARD_VENDOR_RAMDISK_BLOCK_LIST_FILE := $(KERNEL_PATH)/ramdisk/modules.blocklist
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
@@ -145,9 +138,7 @@ BOARD_VNDK_VERSION := current
 BOARD_WLAN_DEVICE := MediaTek
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-# BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_mt66xx
 BOARD_HOSTAPD_DRIVER := $(BOARD_WPA_SUPPLICANT_DRIVER)
-# No private lib - uses fallback
 WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_FW_PATH_STA := "STA"
 WIFI_DRIVER_FW_PATH_AP := "AP"
@@ -175,9 +166,5 @@ BUILD_BROKEN_DUP_RULES := true
 # Screen density
 TARGET_SCREEN_DENSITY := 392
 
-# Workaround for Lineage soong generator
-
 # Inherit vendor BoardConfig
 include vendor/infinix/x6886/BoardConfigVendor.mk
-
-BOARD_PREBUILT_DTBIMAGE_DIR := device/infinix/x6886/prebuilt/dtb
