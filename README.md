@@ -8,21 +8,21 @@
 | RAM | 8 GB |
 | Storage | 128/256 GB |
 | Display | 6.78" IPS LCD, 1080x2460 |
-| Android | 15 ( XOS 15 ) |
-| Kernel | Linux 5.10.237 |
-| Branch | lineage-23.2 |
+| Android | 15 (XOS 15) |
+| Kernel | Linux 5.10.198 |
+| Branch | `Device.Lineage.23.2` |
 
 ## Device tree structure
 
 ```
 device/infinix/x6886/
-├── Android.mk / Android.bp
+├── Android.bp / Android.mk
 ├── AndroidProducts.mk           # Points to lineage_x6886.mk
 ├── BoardConfig.mk               # Board config (MT6789, AVB, SEPolicy, etc.)
-├── device.mk                    # Main device makefile (all sections)
+├── device.mk                    # Main device makefile
 ├── lineage_x6886.mk             # LineageOS product entry point
 ├── extract-files.py / setup-makefiles.py
-├── proprietary-files.txt        # Full blob manifest (7074 entries)
+├── proprietary-files.txt        # Full blob manifest (5010 entries)
 ├── *.prop                       # System/vendor/product/odm properties
 ├── configs/                     # Audio, media, power, sensors, thermal, vintf
 ├── overlay/                     # RRO overlays (Settings, SystemUI, Wifi, etc.)
@@ -30,29 +30,39 @@ device/infinix/x6886/
 ├── prebuilt/                    # dtb.img, dtbo.img, ramdisk.cpio
 ├── rootdir/                     # Init RC files, fstab, ueventd, insmod
 ├── sepolicy/                    # SELinux policies (private/public/vendor)
-└── vndk/                        # VNDK libs (binder, hidlbase, utils)
+└── vndk/                        # VNDK compatibility shims (v31, v32, v33, v34)
 ```
+
+## VNDK compatibility shims
+
+Vendor blobs from stock ROM were compiled against different VNDK versions. Versioned shim libraries are needed to bridge the gap:
+
+| VNDK Version | Source | Libraries |
+|:--- |:--- |:--- |
+| v31 | Stock VNDK APEX (com.android.vndk.v31) | libbinder, libhidlbase, libutils, libalsautils |
+| v32 | Copied from v31 (no v32 APEX in stock) | libbinder, libhidlbase, libutils |
+| v33 | Stock VNDK APEX (com.android.vndk.v33) | libbinder, libhidlbase, libutils, libstagefright_foundation |
+| v34 | Stock VNDK APEX (com.android.vndk.v34) | libbinder, libhidlbase, libutils, libtinyxml2 |
+
+All shims include both arm (32-bit) and arm64 (64-bit) variants.
 
 ## Build
 
 ```bash
-# Setup
 source build/envsetup.sh
 lunch lineage_x6886-userdebug
-
-# Build
-mka bacon -j$(nproc)
+mka bacon -j24
 ```
 
 ## Requirements
 
-| Dependency | Repo | Source |
+| Dependency | Repo | Branch |
 |------------|------|--------|
-| kernel/infinix/x6886 | kernel_infinix_x6886 | lineage-23.2 |
-| vendor/infinix/x6886 | vendor_infinix_x6886 | lineage-23.2 (Git LFS) |
+| kernel/infinix/x6886 | Il103/kernel_infinix_x6886 | Kernel.Lineage.23.2 |
+| vendor/infinix/x6886 | Il103/vendor_infinix_x6886 | Vendor.Lineage.23.2 |
 | hardware/mediatek | LineageOS/android_hardware_mediatek | lineage-23.2 |
 | device/mediatek/sepolicy_vndr | LineageOS/android_device_mediatek_sepolicy_vndr | lineage-23.2 |
-| hardware/transsion | mt6789-transsion/hardware_transsion | lineage-23.2 |
+| hardware/transsion | mt6789-transsion/hardware_transsion | lineage-23.0 |
 | vendor/mediatek/ims | xiaomi-mediatek-devs/android_vendor_mediatek_ims | android-16 |
 
 See [android_manifest_x6886](https://github.com/Il103/android_manifest_x6886) for the full local manifest.
