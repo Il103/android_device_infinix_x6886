@@ -9,12 +9,12 @@ debug.sf.default_touch_timer_ms=200
 ro.surface_flinger.set_idle_timer_ms=600
 
 # Radio
-persist.radio.multisim.config=tsts
-persist.vendor.radio.msimmode=tsts
+persist.radio.multisim.config=dsds
+persist.vendor.radio.msimmode=dsds
 persist.vendor.radio.oem_urc_enable=0
-persist.vendor.radio.tsd.multisimmode=2
-ro.telephony.sim.count=3
-telephony.active_modems.max_count=3
+persist.vendor.radio.tsd.multisimmode=1
+ro.telephony.sim.count=2
+telephony.active_modems.max_count=2
 
 # Miscellaneous
 dalvik.vm.background-dex2oat-threads=4
@@ -75,7 +75,7 @@ ro.anti_theft=1
 ro.app_lock_sr_ps_0004_001.support=1
 ro.audiolink_support=1
 ro.bind_iotcard_service=1
-ro.boot.product.hardware.sku=tsts
+ro.boot.product.hardware.sku=dsds
 ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural;
 ro.childmode.support=1
 ro.cloudserver.clouddisk.support=1
@@ -560,7 +560,7 @@ ro.transsion_unlock_mode_support=2
 ro.vendor.mtk_gwsd_support=1
 ro.vendor.powerdata.support=1
 ro.vendor.powerwarning.support=1
-ro.vendor.radio.max.multisim=tsts
+ro.vendor.radio.max.multisim=dsds
 ro.vendor.tran.audio.stereochannel.rotation=1
 ro.vendor.tran.audio_event_tracking.support=1
 ro.vendor.tran.ecc_remake_support=1
