@@ -15,4 +15,3 @@ PRODUCT_MANUFACTURER := Infinix Mobility Limited
 PRODUCT_RELEASE_NAME := Infinix Hot 60 Pro Plus
 
 BUILD_FINGERPRINT := Infinix/X6886-OP/Infinix-X6886:15/AP3A.240905.015.A2/180004:user/release-keys
-PRODUCT_APEX_SYSTEM_SERVER_JARS += com.android.crashrecovery:service-crashrecovery
