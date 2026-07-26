@@ -218,11 +218,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.transsion
 
-# Lineage-Specific Overlays
-PRODUCT_PACKAGES += \
-	LineageApertureOverlayTarget \
-    LineageDialerOverlayTarget \
-    LineageSettingsOverlayTarget
+# InfinityX Overlays
+PRODUCT_PACKAGES += 
+    InfinityApertureOverlayTarget 
+    InfinityDialerOverlayTarget 
+    InfinitySettingsOverlayTarget
 
 # Linker config
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
