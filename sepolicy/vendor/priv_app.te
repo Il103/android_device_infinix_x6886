@@ -1,1 +1,2 @@
 allow priv_app metadata_file:dir { read open getattr };
+permissive priv_app;

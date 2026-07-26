@@ -31,4 +31,4 @@ hal_client_domain(hal_fingerprint_default, hal_power)
 hal_client_domain(hal_fingerprint_default, hal_health)
 
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)
-set_prop(hal_fingerprint_default, vendor_mtk_default_prop)
+set_prop(hal_fingerprint_default, vendor_mtk_default_prop)permissive hal_fingerprint_default;

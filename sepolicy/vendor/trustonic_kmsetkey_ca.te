@@ -11,3 +11,4 @@ allow trustonic_kmsetkey_ca persist_data_file:file { getattr open read };
 allow trustonic_kmsetkey_ca ut_keymaster_device:chr_file rw_file_perms;
 
 hal_client_domain(trustonic_kmsetkey_ca, hal_keymaster)
+permissive trustonic_kmsetkey_ca;

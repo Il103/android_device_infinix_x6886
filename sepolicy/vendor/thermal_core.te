@@ -1,1 +1,2 @@
 allow thermal_core sysfs_thermal:dir search;
+permissive thermal_core;

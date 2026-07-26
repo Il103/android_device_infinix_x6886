@@ -1,1 +1,2 @@
 type fs_service, vndservice_manager_type;
+permissive vndservice;

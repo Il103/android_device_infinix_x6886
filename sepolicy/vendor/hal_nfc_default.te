@@ -5,4 +5,4 @@ vendor_internal_prop(vendor_nfc_prop)
 allow hal_nfc_default vendor_sysfs_nfc_chip_name:file r_file_perms;
 add_hwservice(hal_nfc_default, vendor_tmsnfc_hwservice)
 
-set_prop(hal_nfc_default, vendor_nfc_prop)
+set_prop(hal_nfc_default, vendor_nfc_prop)permissive hal_nfc_default;

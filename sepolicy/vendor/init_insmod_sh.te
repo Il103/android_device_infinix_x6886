@@ -5,3 +5,4 @@ allow init_insmod_sh proc_cmdline:file r_file_perms;
 allow init_insmod_sh self:capability sys_nice;
 allow init_insmod_sh kernel:process setsched;
 
+permissive init_insmod_sh;

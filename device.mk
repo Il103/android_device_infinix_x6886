@@ -412,6 +412,46 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 
+# Thermal policy configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal/thermal.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_00.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_00.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_01.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_01.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_02.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_02.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_03.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_03.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_04.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_04.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_05.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_05.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_06.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_06.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_07.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_07.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_08.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_08.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_09.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_09.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_10.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_10.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_11.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_11.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_12.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_12.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_13.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_13.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal_policy_14.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_policy_14.conf
+
+# NFC configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-tms.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-tms_RF.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-tms_RF_EC2.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF_EC2.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-tms_RF_GB1.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-tms_RF_GB1.conf \
+    $(LOCAL_PATH)/configs/nfc/libese-tms.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libese-tms.conf \
+    $(LOCAL_PATH)/configs/nfc/libnfc-slm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-slm.conf
+
+# WiFi configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+
+# GNSS configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gnss/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/agps_profiles_conf2.xml
+
 # USB
 $(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
 
@@ -463,5 +503,171 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd
 
+
+# Stock vendor permission files not provided by AOSP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.hardware_keystore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hardware_keystore.xml \
+    $(LOCAL_PATH)/configs/permissions/android.hardware.microphone.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.microphone.xml \
+    $(LOCAL_PATH)/configs/permissions/com.mediatek.hardware.vow_dsp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.mediatek.hardware.vow_dsp.xml \
+    $(LOCAL_PATH)/configs/permissions/com.mediatek.hardware.vow.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.mediatek.hardware.vow.xml \
+    $(LOCAL_PATH)/configs/permissions/com.nxp.ls.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.ls.xml \
+    $(LOCAL_PATH)/configs/permissions/com.nxp.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.nfc.xml \
+    $(LOCAL_PATH)/configs/permissions/com.transsion.tranfacsdk.permission.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.transsion.tranfacsdk.permission.xml
+
+# ECC list and virtual SPN configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ecc_list.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP01.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP02.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP02.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP09.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP09.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP12.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP12.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP17.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP17.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP18.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP18.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP20.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP20.xml \
+    $(LOCAL_PATH)/configs/ecc_list_OP236.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP236.xml \
+    $(LOCAL_PATH)/configs/ecc_list_preference.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_preference.xml \
+    $(LOCAL_PATH)/configs/ecc_list_tran2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_tran2.xml \
+    $(LOCAL_PATH)/configs/virtual-spn-conf-by-efgid1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efgid1.xml \
+    $(LOCAL_PATH)/configs/virtual-spn-conf-by-efpnn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efpnn.xml \
+    $(LOCAL_PATH)/configs/virtual-spn-conf-by-efspn.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-efspn.xml \
+    $(LOCAL_PATH)/configs/virtual-spn-conf-by-imsi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/virtual-spn-conf-by-imsi.xml
+
+# IPsec configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/ipsec/ipsec.conf:$(TARGET_COPY_OUT_VENDOR)/etc/ipsec.conf \
+    $(LOCAL_PATH)/configs/ipsec/strongswan.conf:$(TARGET_COPY_OUT_VENDOR)/etc/strongswan.conf
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/infinix/x6886/x6886-vendor.mk)
+
+
+# GNSS carrier profiles
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_CT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_CT.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Claro_Peru.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Entel_Peru.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_KDDI.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_SK_Telecom.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_SoftBank.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Sprint.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_T-Mobile_US.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM1.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Test_SIM2.xml \
+    $(LOCAL_PATH)/configs/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_Verizon_Wireless.xml
+
+# AISupporter configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/aisupporter/default_predshellThermal_lr.json:$(TARGET_COPY_OUT_VENDOR)/etc/aisupporter/default_predshellThermal_lr.json
+
+# APDB configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/apdb/APDB_MT6789___W2452:$(TARGET_COPY_OUT_VENDOR)/etc/apdb/APDB_MT6789___W2452 \
+    $(LOCAL_PATH)/configs/apdb/APDB_MT6789___W2452_ENUM:$(TARGET_COPY_OUT_VENDOR)/etc/apdb/APDB_MT6789___W2452_ENUM
+
+# DAR thermal core
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/dar_thermal_core/thermal_core_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/dar_thermal_core/thermal_core_config.json
+
+# EsportsPro configs (11 files)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/esportspro/GameBalanceCloseMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GameBalanceCloseMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/GameBalanceOpenMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GameBalanceOpenMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/GameConserveMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GameConserveMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/GameGPUMaster.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GameGPUMaster.xml \
+    $(LOCAL_PATH)/configs/esportspro/GamePerformanceMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GamePerformanceMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/GameSpaceList.json:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/GameSpaceList.json \
+    $(LOCAL_PATH)/configs/esportspro/SceneGameBalanceCloseMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/SceneGameBalanceCloseMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/SceneGameBalanceOpenMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/SceneGameBalanceOpenMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/SceneGameConserveMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/SceneGameConserveMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/SceneGamePerformanceMode.xml:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/SceneGamePerformanceMode.xml \
+    $(LOCAL_PATH)/configs/esportspro/thermaloption.json:$(TARGET_COPY_OUT_VENDOR)/etc/esportspro/thermaloption.json
+
+# MemFusion2 configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/memfusion2/fstab.enableswap:$(TARGET_COPY_OUT_VENDOR)/etc/memfusion2/fstab.enableswap \
+    $(LOCAL_PATH)/configs/memfusion2/fstab.enableswap_wb:$(TARGET_COPY_OUT_VENDOR)/etc/memfusion2/fstab.enableswap_wb
+
+# Performance configs (21 files)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/performance/blacklist.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/blacklist.json \
+    $(LOCAL_PATH)/configs/performance/block_start_list.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/block_start_list.json \
+    $(LOCAL_PATH)/configs/performance/keep_alive_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/keep_alive_config.json \
+    $(LOCAL_PATH)/configs/performance/memfusion_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/memfusion_config.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_2g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_2g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_3g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_3g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_4g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_4g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_6g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_6g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_8g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_8g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_12g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_12g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_2g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_2g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_3g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_3g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_4g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_4g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_6g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_6g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_8g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_8g_ram.json \
+    $(LOCAL_PATH)/configs/performance/policy_config_apm_12g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/policy_config_apm_12g_ram.json \
+    $(LOCAL_PATH)/configs/performance/whitelist_2g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/whitelist_2g_ram.json \
+    $(LOCAL_PATH)/configs/performance/whitelist_3g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/whitelist_3g_ram.json \
+    $(LOCAL_PATH)/configs/performance/whitelist_4g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/whitelist_4g_ram.json \
+    $(LOCAL_PATH)/configs/performance/whitelist_6g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/whitelist_6g_ram.json \
+    $(LOCAL_PATH)/configs/performance/whitelist_8g_ram.json:$(TARGET_COPY_OUT_VENDOR)/etc/performance/whitelist_8g_ram.json
+
+# Predictor configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/predictor/predictor.json:$(TARGET_COPY_OUT_VENDOR)/etc/predictor/predictor.json
+
+# SmartPA configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/smartpa_param/AW_DSP.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/AW_DSP.bin \
+    $(LOCAL_PATH)/configs/smartpa_param/AW_VMAX_LEFT.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/AW_VMAX_LEFT.bin \
+    $(LOCAL_PATH)/configs/smartpa_param/AW_VMAX_RIGHT.bin:$(TARGET_COPY_OUT_VENDOR)/etc/smartpa_param/AW_VMAX_RIGHT.bin
+
+# ThermalEngine configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermalEngine/GameThermalEngineTypeList.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermalEngine/GameThermalEngineTypeList.xml \
+    $(LOCAL_PATH)/configs/thermalEngine/GameThermalEngineWhiteList.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermalEngine/GameThermalEngineWhiteList.xml
+
+
+# GVoice model files
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/etc/gvoice/model)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gvoice/model/c_model.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/c_model.bin \
+    $(LOCAL_PATH)/configs/gvoice/model/dse_model.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/dse_model.bin \
+    $(LOCAL_PATH)/configs/gvoice/model/g_model.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/g_model.bin \
+    $(LOCAL_PATH)/configs/gvoice/model/spkEmb.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/spkEmb.bin
+
+# Audio DTS configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/dts/beq44:$(TARGET_COPY_OUT_VENDOR)/etc/dts/beq44 \
+    $(LOCAL_PATH)/configs/dts/beq48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/beq48 \
+    $(LOCAL_PATH)/configs/dts/current_bluetooth44k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_bluetooth44k \
+    $(LOCAL_PATH)/configs/dts/current_bluetooth48k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_bluetooth48k \
+    $(LOCAL_PATH)/configs/dts/current_lineout48k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_lineout48k \
+    $(LOCAL_PATH)/configs/dts/current_speaker48k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_speaker48k \
+    $(LOCAL_PATH)/configs/dts/current_usb44k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_usb44k \
+    $(LOCAL_PATH)/configs/dts/current_usb48k:$(TARGET_COPY_OUT_VENDOR)/etc/dts/current_usb48k \
+    $(LOCAL_PATH)/configs/dts/customer.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dts/customer.cfg \
+    $(LOCAL_PATH)/configs/dts/ctc:$(TARGET_COPY_OUT_VENDOR)/etc/dts/ctc \
+    $(LOCAL_PATH)/configs/dts/dts-eagle.lic:$(TARGET_COPY_OUT_VENDOR)/etc/dts/dts-eagle.lic \
+    $(LOCAL_PATH)/configs/dts/dts_audio_settings:$(TARGET_COPY_OUT_VENDOR)/etc/dts/dts_audio_settings \
+    $(LOCAL_PATH)/configs/dts/games_accessory44:$(TARGET_COPY_OUT_VENDOR)/etc/dts/games_accessory44 \
+    $(LOCAL_PATH)/configs/dts/games_accessory48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/games_accessory48 \
+    $(LOCAL_PATH)/configs/dts/games_speaker48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/games_speaker48 \
+    $(LOCAL_PATH)/configs/dts/movie_accessory44:$(TARGET_COPY_OUT_VENDOR)/etc/dts/movie_accessory44 \
+    $(LOCAL_PATH)/configs/dts/movie_accessory48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/movie_accessory48 \
+    $(LOCAL_PATH)/configs/dts/movie_speaker48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/movie_speaker48 \
+    $(LOCAL_PATH)/configs/dts/music_accessory44:$(TARGET_COPY_OUT_VENDOR)/etc/dts/music_accessory44 \
+    $(LOCAL_PATH)/configs/dts/music_accessory48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/music_accessory48 \
+    $(LOCAL_PATH)/configs/dts/music_speaker48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/music_speaker48 \
+    $(LOCAL_PATH)/configs/dts/off_speaker48:$(TARGET_COPY_OUT_VENDOR)/etc/dts/off_speaker48
+
+# TranFac (Transsion Face Unlock) configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/tranfac/common/CommonParams.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/common/CommonParams.json \
+    $(LOCAL_PATH)/configs/tranfac/feature/FeatureAuto.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/feature/FeatureAuto.json \
+    $(LOCAL_PATH)/configs/tranfac/aidl/default/NvBlock.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/aidl/default/NvBlock.json \
+    $(LOCAL_PATH)/configs/tranfac/aidl/default/SensorNv.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/aidl/default/SensorNv.json \
+    $(LOCAL_PATH)/configs/tranfac/sign/Signature.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/sign/Signature.json

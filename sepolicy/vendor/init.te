@@ -5,3 +5,4 @@ allow init jiiov_fp_device:chr_file { ioctl read write getattr open };
 
 get_prop(init, vendor_mtk_service_nvram_restore_prop)
 get_prop(init, vts_status_prop)
+permissive init;

@@ -1,1 +1,2 @@
 get_prop(hal_wifi_default, persist_vendor_debug_wifi_prop)
+permissive hal_wifi_default;

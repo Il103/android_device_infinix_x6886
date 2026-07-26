@@ -5,3 +5,4 @@ init_daemon_domain(trancamserver)
 
 allow trancamserver hal_trancamserver_hwservice:hwservice_manager { find add };
 allow trancamserver hidl_base_hwservice:hwservice_manager add;
+permissive trancamserver;

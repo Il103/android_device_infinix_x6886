@@ -36,3 +36,4 @@ allow hal_power_default proc_game_state:dir { ioctl read getattr lock open watch
 allow hal_power_default proc_game_state:file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_power_default proc_game_state:lnk_file { ioctl read write getattr lock append map open watch watch_reads };
 
+permissive hal_power_default;
