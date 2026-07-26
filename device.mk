@@ -477,13 +477,18 @@ PRODUCT_PACKAGES += \
     libcamera_metadata_shim \
     libstagefright_foundation-v33 \
     libtinyxml2-v34 \
-    libutils-v32 \
-    libhidlbase-v32
+    libutils-v34 \
+    libhidlbase-v34
 
 PRODUCT_PACKAGES += \
     libutils-v31 \
     libhidlbase-v31 \
     libbinder-v31 \
+    libbinder-v32 \
+    libalsautils-v31 \
+    libbinder-v33 \
+    libhidlbase-v33 \
+    libbinder-v34 \
     libunwindstack.vendor \
     libutilscallstack.vendor
 

@@ -1,9 +1,3 @@
-//
-// Copyright (C) 2024 The LineageOS Project
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-
 soong_namespace {
 }
 
@@ -15,16 +9,10 @@ soong_config_module_type_import {
 cc_prebuilt_library_shared {
     name: "libbinder-v31",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v31/arm/libbinder-v31.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v31/arm64/libbinder-v31.so"],
-        },
+        android_arm: { srcs: ["vndk/v31/arm/libbinder-v31.so"] },
+        android_arm64: { srcs: ["vndk/v31/arm64/libbinder-v31.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -33,16 +21,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libhidlbase-v31",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v31/arm/libhidlbase-v31.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v31/arm64/libhidlbase-v31.so"],
-        },
+        android_arm: { srcs: ["vndk/v31/arm/libhidlbase-v31.so"] },
+        android_arm64: { srcs: ["vndk/v31/arm64/libhidlbase-v31.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -51,16 +33,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libutils-v31",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v31/arm/libutils-v31.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v31/arm64/libutils-v31.so"],
-        },
+        android_arm: { srcs: ["vndk/v31/arm/libutils-v31.so"] },
+        android_arm64: { srcs: ["vndk/v31/arm64/libutils-v31.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -69,16 +45,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libalsautils-v31",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v31/arm/libalsautils-v31.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v31/arm64/libalsautils-v31.so"],
-        },
+        android_arm: { srcs: ["vndk/v31/arm/libalsautils-v31.so"] },
+        android_arm64: { srcs: ["vndk/v31/arm64/libalsautils-v31.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -87,52 +57,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libbinder-v32",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v32/arm/libbinder-v32.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v32/arm64/libbinder-v32.so"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "libhidlbase-v32",
-    vendor: true,
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["vndk/v32/arm/libhidlbase-v32.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v32/arm64/libhidlbase-v32.so"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "libutils-v32",
-    vendor: true,
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["vndk/v32/arm/libutils-v32.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v32/arm64/libutils-v32.so"],
-        },
+        android_arm: { srcs: ["vndk/v32/arm/libbinder-v32.so"] },
+        android_arm64: { srcs: ["vndk/v32/arm64/libbinder-v32.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -141,16 +69,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libbinder-v33",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v33/arm/libbinder-v33.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v33/arm64/libbinder-v33.so"],
-        },
+        android_arm: { srcs: ["vndk/v33/arm/libbinder-v33.so"] },
+        android_arm64: { srcs: ["vndk/v33/arm64/libbinder-v33.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -159,52 +81,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libhidlbase-v33",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v33/arm/libhidlbase-v33.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v33/arm64/libhidlbase-v33.so"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "libutils-v33",
-    vendor: true,
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["vndk/v33/arm/libutils-v33.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v33/arm64/libutils-v33.so"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "libstagefright_foundation-v33",
-    vendor: true,
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["vndk/v33/arm/libstagefright_foundation-v33.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v33/arm64/libstagefright_foundation-v33.so"],
-        },
+        android_arm: { srcs: ["vndk/v33/arm/libhidlbase-v33.so"] },
+        android_arm64: { srcs: ["vndk/v33/arm64/libhidlbase-v33.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -213,16 +93,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libbinder-v34",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v34/arm/libbinder-v34.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v34/arm64/libbinder-v34.so"],
-        },
+        android_arm: { srcs: ["vndk/v34/arm/libbinder-v34.so"] },
+        android_arm64: { srcs: ["vndk/v34/arm64/libbinder-v34.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -231,16 +105,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libhidlbase-v34",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v34/arm/libhidlbase-v34.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v34/arm64/libhidlbase-v34.so"],
-        },
+        android_arm: { srcs: ["vndk/v34/arm/libhidlbase-v34.so"] },
+        android_arm64: { srcs: ["vndk/v34/arm64/libhidlbase-v34.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,
@@ -249,34 +117,10 @@ cc_prebuilt_library_shared {
 cc_prebuilt_library_shared {
     name: "libutils-v34",
     vendor: true,
-    strip: {
-        none: true,
-    },
+    strip: { none: true },
     target: {
-        android_arm: {
-            srcs: ["vndk/v34/arm/libutils-v34.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v34/arm64/libutils-v34.so"],
-        },
-    },
-    compile_multilib: "both",
-    check_elf_files: false,
-}
-
-cc_prebuilt_library_shared {
-    name: "libtinyxml2-v34",
-    vendor: true,
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: ["vndk/v34/arm/libtinyxml2-v34.so"],
-        },
-        android_arm64: {
-            srcs: ["vndk/v34/arm64/libtinyxml2-v34.so"],
-        },
+        android_arm: { srcs: ["vndk/v34/arm/libutils-v34.so"] },
+        android_arm64: { srcs: ["vndk/v34/arm64/libutils-v34.so"] },
     },
     compile_multilib: "both",
     check_elf_files: false,

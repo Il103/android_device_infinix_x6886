@@ -134,6 +134,56 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(CONFIGS_PATH)/vintf/framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(CONFIGS_PATH)/vintf/manifest.xml
+DEVICE_MANIFEST_FILE += \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint@2.1-service-mediatek.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.boot@1.2.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.cas@1.2-service-lazy.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.health@2.1.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-mtk.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.security.keymint-service.trustonic.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.trustonic.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.trustonic.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/gnss-default.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/gnss@2.1-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/lights-mtk-default.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.clearkey.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_apuware_apusys.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_apuware_hmp.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_apuware_utils.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_cameraprovider.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_face_default.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_fingerprint.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_hwcomposer.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_storage.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/manifest_tneengine.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/memtrack-mediatek.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/power-default.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.hardware.trancharge-service.example.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.hardware.trantp-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.mediatek.hardware.paytrigger@1.0-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.mediatek.hardware.tranHwInfo@1.0.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.tms.hardware.nfc.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.security.deviceauthen@2.0.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.security.hap@1.0.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.security.rpmbservice@1.0-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.security.trancriticalparavfy@1.0-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.trancam.trancamserver@1.0.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.tranfacaidl-service.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vendor.transsion.hardware.tranradionet.xml \
+    vendor/infinix/x6886/proprietary/vendor/etc/vintf/manifest/vibrator-mtk-default.xml
+ODM_MANIFEST_FILES := \
+    vendor/infinix/x6886/proprietary/odm/etc/vintf/manifest_dsds.xml \
+    vendor/infinix/x6886/proprietary/odm/etc/vintf/manifest_qsqs.xml \
+    vendor/infinix/x6886/proprietary/odm/etc/vintf/manifest_ss.xml \
+    vendor/infinix/x6886/proprietary/odm/etc/vintf/manifest_tsts.xml
 DEVICE_MATRIX_FILE := $(CONFIGS_PATH)/vintf/compatibility_matrix.xml
 
 # VNDK
