@@ -676,3 +676,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/tranfac/aidl/default/NvBlock.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/aidl/default/NvBlock.json \
     $(LOCAL_PATH)/configs/tranfac/aidl/default/SensorNv.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/aidl/default/SensorNv.json \
     $(LOCAL_PATH)/configs/tranfac/sign/Signature.json:$(TARGET_COPY_OUT_VENDOR)/etc/tranfac/sign/Signature.json
+
+# Vendor overlay prebuilt APKs
+PRODUCT_PACKAGES += \
+    GoogleTetheringResOverlay \
+    InProcessTetheringResOverlay \
+    NetworkStackGoogleResOverlay \
+    NetworkStackInProcessResOverlay \
+    NetworkStackResOverlay \
+    TetheringResOverlay \
+    ConnectivityResOverlay \
+    FrameworkResOverlay \
+    FrameworkResOverlayExt \
+    MtkSettingsResOverlay \
+    MtkTelephonyServiceResOverlay \
+    SettingsProviderResOverlay \
+    WifiResMainlineOverlay \
+    WifiResOverlay
