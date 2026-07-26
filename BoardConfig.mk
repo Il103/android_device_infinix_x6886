@@ -223,3 +223,6 @@ TARGET_SCREEN_DENSITY := 392
 
 # Inherit vendor BoardConfig
 include vendor/infinix/x6886/BoardConfigVendor.mk
+
+# Disable dex_preopt check for prebuilt AOSP modules
+DISABLE_DEXPREOPT_CHECK := true
