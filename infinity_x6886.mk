@@ -12,7 +12,7 @@ $(call inherit-product, vendor/infinity/config/version.mk)
 $(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # InfinityX build flags
-INFINITY_MAINTAINER := berudev0
+INFINITY_MAINTAINER := B E R U
 TARGET_HAS_UDFPS := false
 TARGET_USES_64_BIT_BINDER := true
 
