@@ -632,7 +632,7 @@ PRODUCT_COPY_FILES += \
 
 
 # GVoice model files
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/etc/gvoice/model)
+# mkdir handled by PRODUCT_COPY_FILES
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gvoice/model/c_model.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/c_model.bin \
     $(LOCAL_PATH)/configs/gvoice/model/dse_model.bin:$(TARGET_COPY_OUT_VENDOR)/etc/gvoice/model/dse_model.bin \
