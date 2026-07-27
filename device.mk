@@ -219,9 +219,9 @@ PRODUCT_PACKAGES += \
     android.hardware.lights-service.transsion
 
 # InfinityX Overlays
-PRODUCT_PACKAGES += 
-    InfinityApertureOverlayTarget 
-    InfinityDialerOverlayTarget 
+PRODUCT_PACKAGES += \
+    InfinityApertureOverlayTarget \
+    InfinityDialerOverlayTarget \
     InfinitySettingsOverlayTarget
 
 # Linker config
