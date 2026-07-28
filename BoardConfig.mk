@@ -5,6 +5,7 @@
 
 DEVICE_PATH := device/infinix/x6886
 KERNEL_PATH := kernel/infinix/x6886
+KERNEL_SRC_PATH := kernel/common
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 TARGET_ARCH := arm64
@@ -28,14 +29,17 @@ TARGET_BOARD_PLATFORM := mt6789
 TARGET_NO_BOOTLOADER := true
 BOARD_HAS_MTK_HARDWARE := true
 
-# Kernel (prebuilt)
+# Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := gki_defconfig mgk.config entry_level.config
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)
+TARGET_KERNEL_CONFIG := gki_defconfig
+TARGET_KERNEL_SOURCE := $(KERNEL_SRC_PATH)
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+# Prebuilt DTB/DTBO (GKI kernel doesn't build MTK DTS from source)
+TARGET_PREBUILT_DTB := $(KERNEL_PATH)/dtbs/dtb.img
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbs/dtbo.img
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_USES_VULKAN := true
@@ -47,15 +51,6 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
-TARGET_PREBUILT_DTB := $(KERNEL_PATH)/dtbs/dtb.img
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbs/dtbo.img
-BOARD_KERNEL_SEPARATED_DTBO :=
-endif
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/ramdisk/modules.load))
