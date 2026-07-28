@@ -61,12 +61,12 @@ device/infinix/x6886/
 
 | Category | Count | Stock match |
 |----------|-------|-------------|
-| vendor/ files | 5,275 | 100% |
+| vendor/ files | 4,468 | 100% |
 | system_ext/ files | 1,234 | 100% |
-| Total proprietary-files.txt | 6,405 | 99.96% |
+| Total proprietary-files.txt | 4,493 | 99.96% |
 | Kernel modules (ramdisk) | 189 | 100% identical |
 | Kernel modules (vendor_dlkm) | 208 | 100% identical |
-| Total vendor tree size | 3.0 GB | 6,439 files |
+| Total vendor tree size | 375 MB | 5,710 files |
 
 ## VNDK compatibility shims
 
@@ -102,7 +102,7 @@ mka bacon -j24
 
 | Dependency | Repo | Branch |
 |------------|------|--------|
-| kernel/infinix/x6886 | Il103/kernel_infinix_x6886 | Kernel.Lineage.23.2 |
+| kernel/common | Il103/android_kernel_common-5.10 | android12-5.10 |
 | vendor/infinix/x6886 | Il103/vendor_infinix_x6886 | Vendor.Lineage.23.2 |
 | hardware/mediatek | LineageOS/android_hardware_mediatek | lineage-23.2 |
 | device/mediatek/sepolicy_vndr | LineageOS/android_device_mediatek_sepolicy_vndr | lineage-23.2 |
