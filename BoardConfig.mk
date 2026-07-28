@@ -4,7 +4,7 @@
 #
 
 DEVICE_PATH := device/infinix/x6886
-KERNEL_PATH := kernel/infinix/x6886
+KERNEL_PATH := kernel/common
 KERNEL_SRC_PATH := kernel/common
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
