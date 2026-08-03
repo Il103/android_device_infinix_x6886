@@ -129,7 +129,9 @@ BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_BOOT_ROLLBACK_INDEX := 1
 BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 1
-BOARD_AVB_VBMETA_SYSTEM := product system system_ext vendor
+# FIX: removed 'vendor' here — it is already chained under BOARD_AVB_VBMETA_VENDOR
+# in BoardConfigVendor.mk. A partition must be under only ONE vbmeta or AVB breaks.
+BOARD_AVB_VBMETA_SYSTEM := product system system_ext
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 1
