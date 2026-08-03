@@ -5,7 +5,6 @@
 
 DEVICE_PATH := device/infinix/x6886
 KERNEL_PATH := kernel/infinix/x6886
-KERNEL_SRC_PATH := kernel/common
 CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 TARGET_ARCH := arm64
@@ -29,13 +28,14 @@ TARGET_BOARD_PLATFORM := mt6789
 TARGET_NO_BOOTLOADER := true
 BOARD_HAS_MTK_HARDWARE := true
 
-# Kernel
+# Kernel (prebuilt only - we never build from source)
+# The prebuilt Image.gz in kernel/infinix/x6886 is the exact kernel the
+# prebuilt .ko modules were compiled against, so do NOT build kernel/common.
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := gki_defconfig
-TARGET_KERNEL_SOURCE := $(KERNEL_SRC_PATH)
-TARGET_KERNEL_CLANG_VERSION := r416183b
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image.gz
+BOARD_INCLUDE_DTB_IN_BOOTIMG := false
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -54,7 +54,7 @@ BOARD_KERNEL_CMDLINE += bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-# Kernel modules
+# Kernel modules (prebuilt, shipped inside kernel/infinix/x6886)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/ramdisk/modules.load))
 BOARD_VENDOR_RAMDISK_BLOCK_LIST_FILE := $(KERNEL_PATH)/ramdisk/modules.blocklist
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
@@ -129,7 +129,7 @@ BOARD_AVB_BOOT_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_BOOT_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_BOOT_ROLLBACK_INDEX := 1
 BOARD_AVB_BOOT_ROLLBACK_INDEX_LOCATION := 1
-# FIX: removed 'vendor' here — it is already chained under BOARD_AVB_VBMETA_VENDOR
+# FIX: removed 'vendor' here - it is already chained under BOARD_AVB_VBMETA_VENDOR
 # in BoardConfigVendor.mk. A partition must be under only ONE vbmeta or AVB breaks.
 BOARD_AVB_VBMETA_SYSTEM := product system system_ext
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
